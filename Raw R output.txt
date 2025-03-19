@@ -1,0 +1,169 @@
+# Political Stability influence test: Zambia and Myanmar
+> x=MMR
+> y=ZMB
+> t.test(x,y,alternative = "less")
+
+Welch Two Sample t-test
+data:  x and y
+t = -3.0297, df = 23.873, p-value = 0.002902
+alternative hypothesis: true difference in means is less than 0
+95 percent confidence interval:
+      -Inf -81077368
+sample estimates:
+mean of x mean of y 
+333525000 519833333 
+
+# Governance influence test: Myanmar and Ghana
+> x=MMR
+> y=GHA
+> t.test(x,y, alternative = "less")
+
+Welch Two Sample t-test
+data:  x and y
+t = -5.0538, df = 24.463, p-value = 1.721e-05
+alternative hypothesis: true difference in means is less than 0
+95 percent confidence interval:
+       -Inf -180377314
+sample estimates:
+mean of x mean of y 
+333525000 606111111 
+
+# Economic Stability influence test: Myanmar and Kenya
+> x=MMR
+> y=KEN
+> t.test(x,y, alternative = "less")
+
+Welch Two Sample t-test
+data:  x and y
+t = 2.2579, df = 28.238, p-value = 0.9841
+alternative hypothesis: true difference in means is less than 0
+95 percent confidence interval:
+      -Inf 138447676
+sample estimates:
+mean of x mean of y 
+333525000 254556667 
+
+# Access to electricity influence test: Tanzania and Uzbekistan
+> x=TZA
+> y=UZB
+> t.test(x,y, alternative = "less")
+
+Welch Two Sample t-test
+data:  x and y
+t = -10.686, df = 23.121, p-value = 1.014e-10
+alternative hypothesis: true difference in means is less than 0
+95 percent confidence interval:
+       -Inf -691161862
+sample estimates:
+mean of x mean of y 
+ 86700000 909850000 
+
+# Fossil Fuel Consumption influence test: Egypt and Tanzania
+> x=EGY
+> y=TZA
+> t.test(x,y, alternative = "less")
+
+Welch Two Sample t-test
+data:  x and y
+t = 6.2596, df = 22.657, p-value = 1
+alternative hypothesis: true difference in means is less than 0
+95 percent confidence interval:
+      -Inf 798701634
+sample estimates:
+mean of x mean of y 
+713636667  86700000 
+
+# Use of Renewables influence test: Senegal and Cambodia
+> x=SEN
+> y=KHM
+> t.test(x,y, alternative = "less")
+
+Welch Two Sample t-test
+data:  x and y
+t = -1.3549, df = 24.844, p-value = 0.09382
+alternative hypothesis: true difference in means is less than 0
+95 percent confidence interval:
+     -Inf 28850786
+sample estimates:
+mean of x mean of y 
+153248889 263785455 
+
+# Influence of Politics on Investment amount
+> POLInf=lm(Average~POL, data=Regression.Model.Data)
+> summary(POLInf)
+
+Call:
+lm(formula = Average ~ POL, data = Regression.Model.Data)
+
+Residuals:
+Min         1Q     Median         3Q        Max 
+-512065911 -319215023 -208688641   14639207 5410402748 
+
+Coefficients:
+Estimate Std. Error t value Pr(>|t|)   
+(Intercept) 456192970  137325857   3.322  0.00158 **
+POL          65940077  123100953   0.536  0.59432   
+
+Residual standard error: 823700000 on 56 degrees of freedom
+Multiple R-squared:  0.005098, Adjusted R-squared:  -0.01267 
+F-statistic: 0.2869 on 1 and 56 DF,  p-value: 0.5943
+
+# Influence of Governance on Investment amount
+> GOVInf = lm(Average~GOV, data=Regression.Model.Data)
+> summary(GOVInf)
+
+Call:
+lm(formula = Average ~ GOV, data = Regression.Model.Data)
+
+Residuals:
+Min         1Q     Median         3Q        Max 
+-411126235 -328741024 -228184729  -43135527 5413548445 
+
+Coefficients:
+Estimate Std. Error t value Pr(>|t|)
+(Intercept) 387557319  450551930   0.860    0.393
+GOV           8333976  156342135   0.053    0.958
+
+Residual standard error: 825800000 on 56 degrees of freedom
+Multiple R-squared:  5.074e-05, Adjusted R-squared:  -0.01781 
+F-statistic: 0.002842 on 1 and 56 DF,  p-value: 0.9577
+
+# Influence of Economics on Investment amount
+> ECNInf = lm(Average~ECN, data=Regression.Model.Data)
+> summary(ECNInf)
+
+Call:
+lm(formula = Average ~ ECN, data = Regression.Model.Data)
+
+Residuals:
+Min         1Q     Median         3Q        Max 
+-806691679 -284914418 -189054604   44038642 5204659119 
+
+Coefficients:
+Estimate Std. Error t value Pr(>|t|)  
+(Intercept) 1069789923  524818128   2.038   0.0462 *
+ECN         -192741577  150297804  -1.282   0.2050  
+
+Residual standard error: 8.14e+08 on 56 degrees of freedom
+Multiple R-squared:  0.02853, Adjusted R-squared:  0.01118 
+F-statistic: 1.645 on 1 and 56 DF,  p-value: 0.205
+
+# Influence of Renewable energy demand on Investment amount
+> REInf = lm(Average~RE, data = Regression.Model.Data)
+> summary(REInf)
+
+Call:
+lm(formula = Average ~ RE, data = Regression.Model.Data)
+
+Residuals:
+Min         1Q     Median         3Q        Max 
+-430791908 -322066951 -222152909  -38043208 5410931299 
+
+Coefficients:
+Estimate Std. Error t value Pr(>|t|)
+(Intercept) 457920013  333571492   1.373    0.175
+RE          -86112421  577349040  -0.149    0.882
+
+Residual standard error: 825700000 on 56 degrees of freedom
+Multiple R-squared:  0.0003971, Adjusted R-squared:  -0.01745 
+F-statistic: 0.02225 on 1 and 56 DF,  p-value: 0.882
